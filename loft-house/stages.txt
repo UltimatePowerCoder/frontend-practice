@@ -1,0 +1,81 @@
+Этапы работы над проектом.
+Так как до этого я верстал без использования препроцессоров, решил оставить небольшой конспект.
+
+1.  Создана структура фалйлов и папок.
+    Так как используем SCSS, в корне проекта cоздана папка SCSS.
+    Внутри SCSS были созданы папки base и blocks и файл main.scss
+    
+    В папку base помещены файлы:
+        _base.scss - Для основных стилей.
+        _reset.scss - Для сброса стандартных стилей.
+        _vars.scss - Для переменных.
+    
+    Папка blocks временно пустует.
+
+    Внури файла main.scss импротировали файлы:
+    
+    // Base
+    @import './base/reset';
+    @import './base/vars';
+    @import './base/base';
+
+    Важно соблюдать правильную последовательность в подключении файлов scss!
+
+2. Подключение шрифтов:
+    Смотрим в макете какие шрифты используются.
+    Для Фигмы - плагин font fascia.
+    Для логотипа шрифт не подключаем - загрузим как картинку при нарезке.
+
+    Шрифты ищем в Google Fonts:
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Raleway:wght@400;700&family=Roboto:wght@300&display=swap');
+
+    CSS правила для шрифтов там же берем:
+    font-family: 'Playfair Display', serif;
+    font-family: 'Raleway', sans-serif;
+    font-family: 'Roboto', sans-serif;
+
+    Шрифты подключаем внутри файла _base.scss
+    Далее смотрим есть ли шрифт который является базовым для текста и используется чаще всего.
+    В нашем случае это Raleway - его мы укажем внутри тега body - font-family: 'Raleway', sans-serif;
+    После этого заведем этот шрифт в переменную - внутри файла _vars.scss:
+        В нём создаем комментарий //Fonts - и пишем переменные с шрифтами которые использовали.
+        
+        // Fonts
+        $font-main: 'Raleway', sans-serif;
+        $font-accent: 'Playfair Display', serif;
+        $font-secondary: 'Roboto', sans-serif;
+
+    Теперь можно для тега body задать переменную с шрифтом Raleway.
+
+3. Распределение цветов макета по переменным.
+    Аналогично, в файле _vars.scss создаем комментарий //Colors.
+    И смотрим в макете какие основные цвета будут использоваться на странице.
+    В фигме можно кликнуть на название, которое находится в верхнем левом углу фрейма.
+    Далее мы увидим используемые цвета и сможем их забрать через inspect или dev tools.
+    
+    //Colors
+    $dark: #242B33;
+    $accent: #D4C17F;
+    $white: #fff;
+    $footer-bg: #2D343C;
+
+4. Добавляем базовые стили для страницы:
+    Внутри _base.scss пишем цвет фона, цвет текста, цвет ссылок.
+    
+    body {
+        font-family: $font-main;
+        background-color: $dark;
+        color: $white;
+        font-size: 16px;
+    }
+
+    a {
+        color: $white;
+        transition: color 0.2s ease-in;
+    
+        &:hover{
+            color: $accent;
+        }
+    }
+
+После чего можем переходить к верстке макета.
