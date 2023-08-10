@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
-    
+
     <!-- Это лендинг для жилого комплекса, при разработке планирую использовать:
     - SCSS
     - Переменные
@@ -17,13 +18,41 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/main.css">
     <title>Loft House - Главная.</title>
 </head>
+
 <body>
-        <header class="header"></header>
+    <header class="header">
+        <div class="header__top">
+            <div class="container">
+                <div class="header__top-row">
+                    <a href="#">
+                        <img src="./img/logo.svg" alt="Loft House">
+                    </a>
+                    <div class="header__nav">
+                        <nav class="nav">
+                            <ul class="nav__list">
+                                <li><a href="#">О комплексе</a></li>
+                                <li><a href="#">Район</a></li>
+                                <li><a href="#">Каталог квартир</a></li>
+                                <li><a href="#">Ипотека</a></li>
+                                <li><a href="#">Контакты</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header__title">
+            <div class="container">Центральный заголовок</div>
+        </div>
+        <div class="header__bottom">
+            <div class="container">Телефон и контакты</div>
+        </div>
+    </header>
 
     <script src="./scripts/script.js"></script>
 </body>
+
 </html>

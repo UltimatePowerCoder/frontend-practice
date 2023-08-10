@@ -1,5 +1,5 @@
 Этапы работы над проектом.
-Так как до этого я верстал без использования препроцессоров, решил оставить небольшой конспект.
+Так как до этого я верстал без использования препроцессоров, сделал подробный конспект.
 
 1.  Создана структура фалйлов и папок.
     Так как используем SCSS, в корне проекта cоздана папка SCSS.
@@ -80,6 +80,24 @@
 
 5. Верстка макета:
 
+    NB! Рекомендуется располагать свойства в следующем порядке:
+
+        Первым делом пишем свойства: display, justify...
+
+        Далее положение элемента относительно других: 
+        position, left/right/top/bottom, float, clear, z-index.
+        
+        Затем размеры и отступы: 
+        width, height, margin, padding…
+        
+        Рамка border, она частично относится к размерам.
+        
+        Общее оформление содержимого: 
+        list-style-type, overflow…
+        
+        Цветовое и стилевое оформление: 
+        background, color, font…
+
     5.1 Шапка сайта:
         Сохраняем всю графику необходимую для размещения в шапке:
 
@@ -105,3 +123,93 @@
 
         Далее создаем контейнер ограничивающий размер блока по ширине и размещаем его по центру:
         - Ширину смотрим в макете. В нашем случае она - 1110px.
+            
+            Поэтому создаем div с классом container и стилизуем его в _base:
+            .container {
+               width: 1140px; - Из за того что указали box-sizing: border-box;
+               padding: 0px 15px; - Что бы не прилипал контент к краям браузера.
+               margin: 0 auto; - Ствим контейнер по центру. 
+            }
+
+        Посмотрим на блок:
+        Логотип и Меню - в верху элемента - <div class="header__top"></div>
+        Заголовок - по центру элемента - <div class="header__title"></div>
+        Адрес и номер телефона - в нижней части элемента - <div class="header__bottom"></div>
+
+        Стили будем писать в _header.scss
+        И начнем со стилей для тега header, внутри которого у нас находятся контейнеры, которые
+        мы только что создавали выше.
+
+        <header class="header">
+        <div class="header__top">
+            <div class="container">
+                <div class="header__top-row">
+                    <a href="#">
+                        <img src="./img/logo.svg" alt="Loft House">
+                    </a>
+                    <div class="header__nav">
+                        <nav class="nav">
+                            <ul class="nav__list">
+                                <li><a href="#">О комплексе</a></li>
+                                <li><a href="#">Район</a></li>
+                                <li><a href="#">Каталог квартир</a></li>
+                                <li><a href="#">Ипотека</a></li>
+                                <li><a href="#">Контакты</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header__title">
+            <div class="container">Центральный заголовок</div>
+        </div>
+        <div class="header__bottom">
+            <div class="container">Телефон и контакты</div>
+        </div>
+        </header>
+
+
+        Стили:
+        .header {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            padding-top: 30px;
+            padding-bottom: 74px;
+
+            min-height: 840px;
+
+            background: 
+            linear-gradient(
+                180deg,
+                #242B33 11.98%,
+                rgba(45, 52, 60, 0.38) 51.04%,
+                #242B33 92.19%
+            ),
+            url(./../img/header/header-bg.jpg), lightgray 50% / cover no-repeat;
+        }
+
+        .header__top-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+    Для навигации создаем отдельный файл _nav.scss и не забываем его подключить в main.scss:
+    @import './blocks/nav';
+
+    Внутри _nav.scss пишем стили для навигации:
+    
+    .nav {
+        font-size: 14px;
+    }
+
+    .nav__list {
+        display: flex;
+        flex-direction: row;
+        column-gap: 40px;
+    }
+
+    К этому меню еще придется вернуться во время адаптации. А пока идем дальше.
