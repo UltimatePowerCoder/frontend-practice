@@ -213,3 +213,83 @@
     }
 
     К этому меню еще придется вернуться во время адаптации. А пока идем дальше.
+    И следующий у нас Заголовок и низ блока с контактами:
+
+     <div class="header__title container">
+            <h1 class="header__desc">Жилой комплекс <br> в историческом центре</h1>
+            <a href="#benefits"><img class="header__icon" src="./img/header/mouse.svg" alt="Scroll next"></a>
+     </div>
+
+     <div class="header__bottom">
+            <div class="container">
+                <div class="header__contacts">
+                    <div class="header__adress"><a href="#link-to-map">Наб. реки Фонтанки 10-15</a></div>
+                    <div class="header__phone"><a href="tel:+78121234567">8 (812) 123-45-67</a></div>
+                </div>
+            </div>
+     </div>
+
+    В стилях:
+
+    .header__title{
+        position: relative;
+        margin-bottom: 320px;
+    }
+
+    .header__desc {
+        text-align: center;
+        font-family: $font-accent;
+        font-size: 48px;
+        font-weight: 700;
+        color: $accent;
+    }
+
+    .header__icon{
+        position: absolute;
+        right: 47%;
+        bottom: -110px;
+
+        cursor: pointer;
+    }
+
+    .header__contacts {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 625px;
+        margin: 0 auto;
+
+    }
+
+    .header__adress,
+    .header__phone {
+        position: relative;
+        padding-left: 35px;
+    }
+
+    .header__phone {
+        padding-right: 90px;
+    }
+
+    .header__adress::before,
+    .header__phone::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 21px;
+        height: 21px;
+        background-repeat: no-repeat;
+    }
+
+    .header__adress::before{
+        background-image: url(./../img/header/map.svg);
+    }
+
+    .header__phone::before {
+        background-image: url(./../img/header/phone.svg);
+    }
+
+    На этом заканчиваем верстку шапки.
+
+
