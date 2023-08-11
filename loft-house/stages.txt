@@ -197,99 +197,189 @@
             align-items: center;
         }
 
-    Для навигации создаем отдельный файл _nav.scss и не забываем его подключить в main.scss:
-    @import './blocks/nav';
+        Для навигации создаем отдельный файл _nav.scss и не забываем его подключить в main.scss:
+        @import './blocks/nav';
 
-    Внутри _nav.scss пишем стили для навигации:
-    
-    .nav {
-        font-size: 14px;
-    }
+        Внутри _nav.scss пишем стили для навигации:
+        
+        .nav {
+            font-size: 14px;
+        }
 
-    .nav__list {
-        display: flex;
-        flex-direction: row;
-        column-gap: 40px;
-    }
+        .nav__list {
+            display: flex;
+            flex-direction: row;
+            column-gap: 40px;
+        }
 
-    К этому меню еще придется вернуться во время адаптации. А пока идем дальше.
-    И следующий у нас Заголовок и низ блока с контактами:
+        К этому меню еще придется вернуться во время адаптации. А пока идем дальше.
+        И следующий у нас Заголовок и низ блока с контактами:
 
-     <div class="header__title container">
-            <h1 class="header__desc">Жилой комплекс <br> в историческом центре</h1>
-            <a href="#benefits"><img class="header__icon" src="./img/header/mouse.svg" alt="Scroll next"></a>
-     </div>
+        <div class="header__title container">
+                <h1 class="header__desc">Жилой комплекс <br> в историческом центре</h1>
+                <a href="#benefits"><img class="header__icon" src="./img/header/mouse.svg" alt="Scroll next"></a>
+        </div>
 
-     <div class="header__bottom">
-            <div class="container">
-                <div class="header__contacts">
-                    <div class="header__adress"><a href="#link-to-map">Наб. реки Фонтанки 10-15</a></div>
-                    <div class="header__phone"><a href="tel:+78121234567">8 (812) 123-45-67</a></div>
+        <div class="header__bottom">
+                <div class="container">
+                    <div class="header__contacts">
+                        <div class="header__adress"><a href="#link-to-map">Наб. реки Фонтанки 10-15</a></div>
+                        <div class="header__phone"><a href="tel:+78121234567">8 (812) 123-45-67</a></div>
+                    </div>
                 </div>
-            </div>
-     </div>
+        </div>
 
-    В стилях:
+        В стилях:
 
-    .header__title{
-        position: relative;
-        margin-bottom: 320px;
-    }
+        .header__title{
+            position: relative;
+            margin-bottom: 320px;
+        }
 
-    .header__desc {
-        text-align: center;
-        font-family: $font-accent;
-        font-size: 48px;
-        font-weight: 700;
-        color: $accent;
-    }
+        .header__desc {
+            text-align: center;
+            font-family: $font-accent;
+            font-size: 48px;
+            font-weight: 700;
+            color: $accent;
+        }
 
-    .header__icon{
+        .header__icon{
+            position: absolute;
+            right: 47%;
+            bottom: -110px;
+
+            cursor: pointer;
+        }
+
+        .header__contacts {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            width: 625px;
+            margin: 0 auto;
+
+        }
+
+        .header__adress,
+        .header__phone {
+            position: relative;
+            padding-left: 35px;
+        }
+
+        .header__phone {
+            padding-right: 90px;
+        }
+
+        .header__adress::before,
+        .header__phone::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 21px;
+            height: 21px;
+            background-repeat: no-repeat;
+        }
+
+        .header__adress::before{
+            background-image: url(./../img/header/map.svg);
+        }
+
+        .header__phone::before {
+            background-image: url(./../img/header/phone.svg);
+        }
+
+        На этом заканчиваем верстку шапки.
+
+    5.2 Создаем тег main для основного контента, в него кладём <section class="benefits">
+        (Помним, что каждый тег section должен иметь какой либо заголовок можно указать и 
+        визуально скрыть его, чтобы на проверке семантики небыло warning-ов)
+
+        Но чтобы его не видели пользователи, так как его нет в дизайне, используем класс:
+        
+        .visually-hidden {
         position: absolute;
-        right: 47%;
-        bottom: -110px;
+        
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        padding: 0;
+        border: 0;
+        overflow: hidden;
 
-        cursor: pointer;
-    }
+        clip: rect(0px 0px 0px 0px);
+        clip: rect(0px, 0px, 0px, 0px);
+        clip-path: inset(100%);
 
-    .header__contacts {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        width: 625px;
-        margin: 0 auto;
+        white-space: nowrap;
+        }
 
-    }
+        Пишем разметку:
+            <main>
+            <section class="benefits">
+                <h2 class="visually-hidden">Преимущества ЖК</h2>
+                
+                <div class="container container--sm">
+                    <div class="benefits__row">
+                        
+                        <div class="benefits__item">
+                            <img class="benefits__item-img" src="./img/benefits/parks.svg" alt="">
+                            <p class="benefits__item-text">Рядом исторические
+                                парки&nbsp;и&nbsp;скверы</p>
+                        </div>
+                        <div class="benefits__item">
+                            <img class="benefits__item-img" src="./img/benefits/building.svg" alt="">
+                            <p class="benefits__item-text">Полностью
+                                обустроенный</p>
+                        </div>
+                        <div class="benefits__item">
+                            <img class="benefits__item-img" src="./img/benefits/fountain.svg" alt="">
+                            <p class="benefits__item-text">10 фонтанов
+                                на территории</p>
+                        </div>
+                        <div class="benefits__item">
+                            <img class="benefits__item-img" src="./img/benefits/bicycle.svg" alt="">
+                            <p class="benefits__item-text">6 км <br>
+                                велодорожек</p>
+                        </div>
 
-    .header__adress,
-    .header__phone {
-        position: relative;
-        padding-left: 35px;
-    }
+                    </div>
+                </div>
+            </section>
+        </main>
 
-    .header__phone {
-        padding-right: 90px;
-    }
+        Создаем новый блок _benefits.scss, подключаем его в main.scss - @import './blocks/benefits';
+        .benefits {
+        padding: 120px 0;
+        }
 
-    .header__adress::before,
-    .header__phone::before {
-        content: "";
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 21px;
-        height: 21px;
-        background-repeat: no-repeat;
-    }
+        .benefits__row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+        }
 
-    .header__adress::before{
-        background-image: url(./../img/header/map.svg);
-    }
+        .benefits__item {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
 
-    .header__phone::before {
-        background-image: url(./../img/header/phone.svg);
-    }
+            &-img {
+                margin-bottom: 53px;
+            }
+            
+            &-text {
+                text-align: center;
+                font-size: 20px;
+                line-height: 1.35;
+                font-family: $font-secondary;
+                font-weight: 300;
+            }
+        }
 
-    На этом заканчиваем верстку шапки.
+
+
+
 
 

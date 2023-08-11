@@ -20,4 +20,25 @@ a {
     max-width: 1140px;
     padding: 0px 15px;
     margin: 0 auto;
+
+    &--sm{
+        width: 840px;
+    }
 }
+
+.visually-hidden {
+    position: absolute;
+    
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+    overflow: hidden;
+
+    clip: rect(0px 0px 0px 0px);
+    clip: rect(0px, 0px, 0px, 0px);
+    clip-path: inset(100%);
+
+    white-space: nowrap;
+    }

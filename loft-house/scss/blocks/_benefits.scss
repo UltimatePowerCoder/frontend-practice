@@ -1,0 +1,27 @@
+.benefits {
+    padding: 120px 0;
+}
+
+.benefits__row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.benefits__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &-img {
+        margin-bottom: 53px;
+    }
+    
+    &-text {
+        text-align: center;
+        font-size: 20px;
+        line-height: 1.35;
+        font-family: $font-secondary;
+        font-weight: 300;
+    }
+}
