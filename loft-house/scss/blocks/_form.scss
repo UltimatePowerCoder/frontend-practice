@@ -1,0 +1,47 @@
+.cta__form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 35px 30px;
+    align-items: center;
+}
+
+.form__input {
+    height: 50px;
+    padding: 12px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: $white;
+    font-size: 14px;
+    transition: background-color 0.2s ease-in;
+    
+    &::placeholder{
+        color: $placeholder;
+    }
+    
+    &:focus{
+        background-color: rgba(255, 255, 255, 0.25);
+    }
+}
+.form__privacy {
+    font-size: 13px;
+    color: $muted;
+    text-align: center;
+    line-height: 1.23;
+}
+
+.form__btn {
+    height: 50px;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+    color: $white;
+    background-color: $accent;
+    transition: background-color 0.2s ease-in;
+    
+    cursor: pointer;
+    
+    &:hover{
+        background-color: saturate($accent, 10%);
+    }
+}
