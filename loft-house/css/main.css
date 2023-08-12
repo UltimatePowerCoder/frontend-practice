@@ -374,4 +374,43 @@ a:hover {
 }
 .form__btn:hover {
   background-color: #ddc676;
+}
+
+.video {
+  text-align: center;
+}
+
+.video__link {
+  position: relative;
+  margin: 0 auto;
+  display: inline-block;
+  text-align: center;
+  cursor: auto;
+}
+.video__link::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(36, 43, 51, 0.8) 100%;
+  transition: background-color 0.2s ease-in;
+}
+.video__link:hover::before {
+  background: rgba(36, 43, 51, 0.6) 100%;
+}
+
+.video__icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9;
+  cursor: pointer;
+  transition: transform 0.3s ease-in;
+}
+.video__icon:hover {
+  transform: translate(-50%, -50%) scale(1.2);
+  filter: saturate(1.5);
 }/*# sourceMappingURL=main.css.map */
