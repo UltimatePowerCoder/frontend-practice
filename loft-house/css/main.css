@@ -214,6 +214,21 @@ a:hover {
   background-image: url(./../img/header/phone.svg);
 }
 
+.header__nav-btn {
+  display: none;
+}
+@media screen and (max-width: 999px) {
+  .header__nav-btn {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 999px) {
+  .header__nav {
+    display: none;
+  }
+}
+
 .nav {
   font-size: 14px;
   letter-spacing: 0.05em;

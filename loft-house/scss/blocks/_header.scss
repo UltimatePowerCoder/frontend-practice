@@ -82,3 +82,20 @@
 .header__phone::before {
     background-image: url(./../img/header/phone.svg);
 }
+
+.header__nav-btn {
+    display: none;
+    @media screen and (max-width: $tablet) {
+        display: block;
+    }
+}
+
+.header__nav{
+    // @media screen and (max-width: $tablet) {
+    //     display: none;
+    // }
+
+    @include mediaTablet {
+        display: none;
+    }
+}
