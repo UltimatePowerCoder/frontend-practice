@@ -149,6 +149,12 @@ a:hover {
   min-height: 840px;
   background: linear-gradient(180deg, #242B33 11.98%, rgba(45, 52, 60, 0.38) 51.04%, #242B33 92.19%), url(./../img/header/header-bg.jpg), lightgray 50%/cover no-repeat;
 }
+@media screen and (max-width: 999px) {
+  .header {
+    min-height: unset;
+    row-gap: 50px;
+  }
+}
 
 .header__top-row {
   display: flex;
@@ -156,10 +162,20 @@ a:hover {
   align-items: center;
   margin-bottom: 200px;
 }
+@media screen and (max-width: 999px) {
+  .header__top-row {
+    margin-bottom: 20px;
+  }
+}
 
 .header__title {
   position: relative;
   margin-bottom: 320px;
+}
+@media screen and (max-width: 999px) {
+  .header__title {
+    margin-bottom: 140px;
+  }
 }
 
 .header__desc {
@@ -169,20 +185,39 @@ a:hover {
   font-weight: 700;
   color: #D4C17F;
 }
+@media screen and (max-width: 999px) {
+  .header__desc {
+    font-size: 31px;
+    padding-bottom: 80px;
+  }
+}
 
 .header__icon {
   position: absolute;
-  right: 47%;
-  bottom: -110px;
+  right: 50%;
+  bottom: -100px;
+  transform: translate(50%, -50%);
   cursor: pointer;
+}
+@media screen and (max-width: 999px) {
+  .header__icon {
+    bottom: -50px;
+  }
 }
 
 .header__contacts {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 625px;
+  max-width: 625px;
   margin: 0 auto;
+}
+@media screen and (max-width: 999px) {
+  .header__contacts {
+    flex-direction: column;
+    align-items: center;
+    row-gap: 30px;
+  }
 }
 
 .header__adress,
@@ -190,9 +225,20 @@ a:hover {
   position: relative;
   padding-left: 35px;
 }
+@media screen and (max-width: 999px) {
+  .header__adress,
+  .header__phone {
+    font-size: 17px;
+  }
+}
 
 .header__phone {
   padding-right: 90px;
+}
+@media screen and (max-width: 999px) {
+  .header__phone {
+    padding-right: 0;
+  }
 }
 
 .header__adress::before,
