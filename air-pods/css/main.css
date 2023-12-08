@@ -33,10 +33,58 @@ button {
     padding: 0;
     border: none;
     border-color: transparent;
+    cursor: pointer;
 }
 
 .container {
-    max-width: 1180px;
+    max-width: 1220px;
     padding: 0px 10px;
     margin: 0 auto;
+}
+
+
+header {
+    background: linear-gradient(180deg, #CADBEB 0%, rgba(235, 235, 235, 0.00) 100%);
+    height: 100vh;
+}
+
+.header__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px 0;
+}
+
+.logo {}
+
+.menu {}
+
+.menu__list {
+    display: flex;
+    align-items: center;
+    gap: 0 40px;
+    font-weight: 700;
+}
+
+.menu__item {
+
+}
+
+.menu__link {}
+
+.menu__btn {
+    padding: 15px 58px;
+    border-radius: 30px;
+    background-color: var(--black);
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--white);
+}
+
+.header__content {}
+
+.title {}
+
+.header__content-images {
+    text-align: center;
 }
