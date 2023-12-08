@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;700&display=swap');
 
 :root {
     --black: #000000;
@@ -18,10 +18,21 @@ html {
     box-sizing: inherit;
 }
 
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--black);
+}
+
 a {
     text-decoration: none;
     color: inherit;
 
+}
+
+button {
+    padding: 0;
+    border: none;
+    border-color: transparent;
 }
 
 .container {
