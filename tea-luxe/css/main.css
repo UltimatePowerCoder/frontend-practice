@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&display=swap');
+
+
 :root {
     --black: #000000;
     --white: #ffffff;
@@ -29,6 +32,13 @@ ul {
     max-width: 1240px;
     padding: 0px 20px;
     margin: 0 auto;
+}
+
+body{
+    color: #151618;
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 1.5;
 }
 
 .header__inner{
