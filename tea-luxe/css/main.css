@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=Open+Sans:ital,wdth,wght@0,75..100,300..800;1,75..100,300..800&display=swap');
 
 
 :root {
@@ -39,6 +39,7 @@ body{
     font-size: 20px;
     font-weight: 300;
     line-height: 1.5;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .header__inner{
