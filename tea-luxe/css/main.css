@@ -4,6 +4,11 @@
 :root {
     --black: #000000;
     --white: #ffffff;
+
+
+    --font-family: 'Open Sans', sans-serif;
+    --second-family: "Cormorant", sans-serif;
+    --third-family: "IM FELL Great Primer SC", sans-serif;
 }
 
 html {
