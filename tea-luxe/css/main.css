@@ -138,17 +138,27 @@ body {
         margin-bottom: 0;
     }
 
-    .header__inner{
+    .header__inner {
         min-height: auto;
+    }
+
+    .blockquote__text {
+        margin-top: 120px;
+        margin-bottom: 135px;
     }
 
 }
 
-@media (max-width: 768px) {
+@media (max-width: 860px) {
+
+    .menu__list {
+        display: none;
+    }
+
 }
 
-@media (max-width: 480px) {
-}
+@media (max-width: 768px) {}
 
-@media (max-width: 360px) {
-}
+@media (max-width: 480px) {}
+
+@media (max-width: 360px) {}
