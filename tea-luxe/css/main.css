@@ -39,6 +39,14 @@ ul {
     list-style: none;
 }
 
+.title {
+    text-align: center;
+    margin-bottom: 60px;
+    font-family: "Cormorant", sans-serif;
+    font-weight: 400;
+    font-size: 40px;
+}
+
 .container {
     max-width: 1240px;
     padding: 0px 20px;
@@ -82,7 +90,7 @@ body {
     right: 0;
     top: 0;
     bottom: 0;
-    background-color: rgba(0,0,0,.5);
+    background-color: rgba(0, 0, 0, .5);
     z-index: 1;
     transition: background-color .3s ease;
 
@@ -173,12 +181,14 @@ body {
     text-align: center;
     display: flex;
     gap: 0 40px;
-    flex-wrap: wrap;
 }
-.assortment__item {
-}
+
 .assortment__img {
+    max-width: 208px;
+    max-height: 208px;
+    width: 100%;
 }
+
 .assortment__name {
     padding-top: 10px;
     font-family: 'Cormorant', serif;
@@ -219,6 +229,15 @@ body {
         margin-bottom: 135px;
     }
 
+    .assortment {
+        margin-bottom: 120px;
+    }
+
+    .assortment__list {
+        gap: 0;
+        flex-wrap: nowrap;
+    }
+
 }
 
 @media (max-width: 860px) {
@@ -247,7 +266,7 @@ body {
         transition: transform .6s ease;
     }
 
-    .menu__list.menu__list--open{
+    .menu__list.menu__list--open {
         transform: translateY(0%);
     }
 
@@ -300,6 +319,13 @@ body {
     .blockquote__text {
         max-width: 640px;
     }
+
+    .assortment__list {
+        gap: 0;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
 }
 
 @media (max-width: 680px) {
@@ -327,11 +353,11 @@ body {
 }
 
 @media (max-width: 480px) {
-    
-    .menu__list{
+
+    .menu__list {
         width: 360px;
     }
-    
+
     .logo {
         margin-right: 80px;
     }
@@ -339,9 +365,17 @@ body {
     .logo img {
         width: 39px;
     }
+
+    .assortment {
+        margin-bottom: 60px;
+    }
 }
 
 @media (max-width: 360px) {
+    .title {
+        margin-bottom: 10px;
+    }
+
     .logo {
         margin-right: 50px;
     }
@@ -371,6 +405,10 @@ body {
     .blockquote__text {
         max-width: 340px;
         margin-top: 70px;
+        margin-bottom: 80px;
+    }
+
+    .assortment {
         margin-bottom: 80px;
     }
 }
